@@ -1,12 +1,15 @@
 "use client";
 
 /*
-  Partners (Partneři) — a logo wall of grey placeholder boxes on white.
-  Each tile is a light-grey (#F5F5F5) box standing in for a logo, labelled with
-  the partner name (black) and sector (grey). The border deepens slightly on
-  hover. No image assets needed.
+  Partners (Partneři) — a logo wall on white.
+  Each tile holds a real partner logo on a clean white card (thin grey border),
+  shown grayscale + dimmed by default and easing to full colour on hover. Logos
+  are placed in a fixed-height box with `object-contain`, so they all render at a
+  consistent height, centred and proportional regardless of their aspect ratio.
+  The sector sits beneath as a small caption.
 */
 
+import Image from "next/image";
 import { content, useLanguage } from "@/lib/i18n";
 import FadeIn from "@/components/FadeIn";
 
@@ -28,10 +31,18 @@ export default function Partners() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {content.partners.items.map((partner, i) => (
             <FadeIn key={partner.name} delay={i * 60}>
-              <div className="group flex h-36 flex-col items-center justify-center rounded-xl border border-line bg-surface px-6 text-center transition-colors duration-300 hover:border-ink/25">
-                {/* Text-based logo placeholder */}
-                <span className="text-lg font-bold tracking-tight text-ink">{partner.name}</span>
-                <span className="mt-2 text-xs uppercase tracking-[0.15em] text-faint">
+              <div className="group flex h-40 flex-col items-center justify-center gap-5 rounded-xl border border-line bg-white px-8 transition-shadow duration-300 hover:shadow-[0_10px_40px_rgba(0,0,0,0.07)]">
+                {/* Fixed-height box keeps every logo the same height + centred */}
+                <div className="relative h-12 w-full">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    fill
+                    sizes="(max-width: 640px) 70vw, (max-width: 1024px) 35vw, 220px"
+                    className="object-contain opacity-70 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                  />
+                </div>
+                <span className="text-xs uppercase tracking-[0.15em] text-faint">
                   {t(partner.sector)}
                 </span>
               </div>

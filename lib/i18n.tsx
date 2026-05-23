@@ -23,6 +23,8 @@ export type ServiceItem = {
 export type PartnerItem = {
   name: string;
   sector: Bilingual;
+  /** Logo file in /public. */
+  logo: string;
 };
 
 /** The full content dictionary for the site. */
@@ -125,12 +127,12 @@ export const content = {
       en: "Companies we trust",
     },
     items: [
-      { name: "MIP Transport", sector: { cs: "Doprava betonu", en: "Concrete transport" } },
-      { name: "Czech Media", sector: { cs: "Nemovitosti", en: "Real estate" } },
-      { name: "Czech Press Group", sector: { cs: "Tisk a média", en: "Print & media" } },
-      { name: "Dislog", sector: { cs: "Logistika a skladování", en: "Logistics & warehousing" } },
-      { name: "Solidum", sector: { cs: "Monolitické konstrukce", en: "Monolithic structures" } },
-      { name: "Ronex", sector: { cs: "Balicí stroje a materiály", en: "Packaging machines & materials" } },
+      { name: "MIP Transport", sector: { cs: "Doprava betonu", en: "Concrete transport" }, logo: "/MIP.png" },
+      { name: "Czech Media", sector: { cs: "Nemovitosti", en: "Real estate" }, logo: "/CM.png" },
+      { name: "Czech Press Group", sector: { cs: "Tisk a média", en: "Print & media" }, logo: "/CPG.png" },
+      { name: "Dislog", sector: { cs: "Logistika a skladování", en: "Logistics & warehousing" }, logo: "/dislog.png" },
+      { name: "Solidum", sector: { cs: "Monolitické konstrukce", en: "Monolithic structures" }, logo: "/solidum.png" },
+      { name: "Ronex", sector: { cs: "Balicí stroje a materiály", en: "Packaging machines & materials" }, logo: "/ronex.png" },
     ] as PartnerItem[],
   },
   contact: {
