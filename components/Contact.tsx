@@ -1,8 +1,9 @@
 "use client";
 
 /*
-  Contact (Kontakt) — split layout on a navy panel.
-  Left: contact details. Right: a simple Name / Email / Message form.
+  Contact (Kontakt) — split layout on white.
+  Left: contact details. Right: a simple Name / Email / Message form with
+  light-grey inputs and a black submit button.
   There is no backend — submitting composes a pre-filled email to
   info@ceig.cz via a `mailto:` link (opens the visitor's mail client).
 */
@@ -31,31 +32,31 @@ export default function Contact() {
   }
 
   const inputClass =
-    "w-full rounded-lg border border-warmwhite/15 bg-navy-700/60 px-4 py-3 text-warmwhite placeholder:text-warmwhite/35 outline-none transition-colors focus:border-gold";
+    "w-full rounded-lg border border-line bg-surface px-4 py-3 text-ink placeholder:text-faint outline-none transition-colors focus:border-ink";
 
   return (
-    <section id="contact" className="bg-navy py-24 text-warmwhite sm:py-32">
+    <section id="contact" className="bg-white py-28 text-ink sm:py-40">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-14 lg:grid-cols-2">
           {/* Left: heading + details */}
           <FadeIn>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-gold">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-faint">
               {t(content.contact.label)}
             </p>
             <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
               {t(content.contact.heading)}
             </h2>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-warmwhite/70">
+            <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
               {t(content.contact.intro)}
             </p>
 
-            <div className="mt-10 border-t border-warmwhite/10 pt-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-warmwhite/40">
+            <div className="mt-10 border-t border-line pt-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-faint">
                 {t(content.contact.infoLabel)}
               </p>
-              <ul className="mt-4 space-y-2 text-warmwhite/80">
+              <ul className="mt-4 space-y-2 text-muted">
                 <li>
-                  <a href={`mailto:${EMAIL}`} className="transition-colors hover:text-gold">
+                  <a href={`mailto:${EMAIL}`} className="transition-colors hover:text-ink">
                     {EMAIL}
                   </a>
                 </li>
@@ -64,7 +65,7 @@ export default function Contact() {
                     href={`https://${WEBSITE}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="transition-colors hover:text-gold"
+                    className="transition-colors hover:text-ink"
                   >
                     {WEBSITE}
                   </a>
@@ -77,7 +78,7 @@ export default function Contact() {
           <FadeIn delay={120}>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="name" className="mb-2 block text-sm font-medium text-warmwhite/80">
+                <label htmlFor="name" className="mb-2 block text-sm font-medium text-ink">
                   {t(content.contact.form.name)}
                 </label>
                 <input
@@ -91,7 +92,7 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="mb-2 block text-sm font-medium text-warmwhite/80">
+                <label htmlFor="email" className="mb-2 block text-sm font-medium text-ink">
                   {t(content.contact.form.email)}
                 </label>
                 <input
@@ -105,7 +106,7 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="mb-2 block text-sm font-medium text-warmwhite/80">
+                <label htmlFor="message" className="mb-2 block text-sm font-medium text-ink">
                   {t(content.contact.form.message)}
                 </label>
                 <textarea
@@ -120,7 +121,7 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-navy transition-all hover:bg-gold-bright hover:shadow-[0_8px_30px_rgba(201,168,76,0.3)] sm:w-auto"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white transition-all hover:opacity-80 sm:w-auto"
               >
                 {t(content.contact.form.submit)}
                 <span>→</span>

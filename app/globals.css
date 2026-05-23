@@ -2,17 +2,23 @@
 
 /*
   CEIG design system — Tailwind v4 theme tokens.
-  Palette: deep navy / warm white / gold accent.
-  These tokens generate utilities like bg-navy, text-gold, border-warmwhite, etc.
+  Light, airy, minimal: white / grey / black only. No colour.
+  These tokens generate utilities like bg-surface, text-ink, border-line, etc.
+
+  (Tailwind v4 has no tailwind.config.ts — the palette is defined here.)
+    white            #FFFFFF  page background        → bg-white / text-white (built-in)
+    surface          #F5F5F5  cards / footer         → bg-surface
+    line             #E5E5E5  borders / dividers     → border-line
+    ink              #111111  primary text & accent  → text-ink / bg-ink
+    muted            #666666  secondary text         → text-muted
+    faint            #999999  small-caps labels      → text-faint
 */
 @theme {
-  --color-navy: #0a1628;
-  --color-navy-700: #122036;
-  --color-navy-600: #1b2c45;
-  --color-warmwhite: #f8f6f1;
-  --color-gold: #c9a84c;
-  --color-gold-bright: #d8bc66;
-  --color-muted: #9aa6b8;
+  --color-surface: #f5f5f5;
+  --color-line: #e5e5e5;
+  --color-ink: #111111;
+  --color-muted: #666666;
+  --color-faint: #999999;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
@@ -38,8 +44,8 @@ html {
 }
 
 body {
-  background-color: var(--color-warmwhite);
-  color: var(--color-navy);
+  background-color: #ffffff;
+  color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }

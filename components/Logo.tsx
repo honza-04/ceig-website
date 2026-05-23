@@ -1,8 +1,8 @@
 /*
   Logo — the CEIG brand lockup as crisp inline SVG + wordmark.
-  The hexagon mark is always gold; the "CEIG" wordmark inherits the current
-  text colour, so the same component reads correctly on the dark hero (white)
-  and on the warm-white nav once scrolled (navy). Geometry matches app/icon.svg.
+  Fully monochrome: the hexagon mark and the "CEIG" wordmark both inherit the
+  current text colour, so the lockup renders solid black on the white nav and
+  adapts anywhere it's placed. Geometry matches app/icon.svg.
 */
 
 export default function Logo({ className = "" }: { className?: string }) {
@@ -18,16 +18,16 @@ export default function Logo({ className = "" }: { className?: string }) {
       >
         <polygon
           points="16,5 25.1,10.5 25.1,21.5 16,27 6.9,21.5 6.9,10.5"
-          stroke="#C9A84C"
+          stroke="currentColor"
           strokeWidth="1.6"
         />
         <polygon
           points="16,10 20.7,12.75 20.7,18.25 16,21 11.3,18.25 11.3,12.75"
-          stroke="#C9A84C"
+          stroke="currentColor"
           strokeWidth="1.4"
-          opacity="0.55"
+          opacity="0.45"
         />
-        <circle cx="16" cy="16" r="1.7" fill="#C9A84C" />
+        <circle cx="16" cy="16" r="1.7" fill="currentColor" />
       </svg>
       <span className="text-xl font-bold tracking-[0.18em]">CEIG</span>
     </span>

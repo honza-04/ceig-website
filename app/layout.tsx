@@ -1,7 +1,12 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/i18n";
+
+// Light theme: white browser chrome on mobile.
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
 
 // Inter, exposed as a CSS variable consumed by the Tailwind --font-sans token.
 const inter = Inter({

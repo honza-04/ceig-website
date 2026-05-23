@@ -15,9 +15,10 @@ Modern, bilingual (Czech / English) corporate website for **CEIG s.r.o.**
 
 ## Design
 
-Minimal, premium, corporate feel. Palette: deep navy `#0A1628`, warm white
-`#F8F6F1`, gold accent `#C9A84C`. Subtle on-scroll fade-ins only — no flashy
-motion. Fully responsive, mobile-first.
+Light, airy, minimal — white / grey / black only, no colour. Palette: white
+`#FFFFFF`, surface `#F5F5F5`, border `#E5E5E5`, ink `#111111` (text + accent),
+muted `#666666` (secondary text), faint `#999999` (labels). Generous whitespace,
+subtle on-scroll fade-ins only — no flashy motion. Fully responsive, mobile-first.
 
 ## Project structure
 
@@ -28,7 +29,7 @@ app/
   globals.css     Tailwind v4 theme tokens + fade-in keyframes
 components/
   Nav.tsx         Sticky nav, anchor links, CZ/EN toggle, mobile menu
-  Hero.tsx        Full-width navy hero with geometric backdrop
+  Hero.tsx        Full-width white hero with geometric backdrop
   About.tsx       Split text + abstract SVG graphic, key stats
   Services.tsx    2×3 services card grid
   Partners.tsx    Logo wall (text placeholders, grayscale → color on hover)
