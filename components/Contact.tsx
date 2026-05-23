@@ -2,9 +2,9 @@
 
 /*
   Contact (Kontakt) — split layout on white.
-  Left: contact details. Right: a simple Name / Email / Message form with
-  light-grey inputs and a black submit button.
-  There is no backend — submitting composes a pre-filled email to
+  Left: heading, intro and the full company / registry details (label + value).
+  Right: a simple Name / Email / Message form with light-grey inputs and a black
+  submit button. There is no backend — submitting composes a pre-filled email to
   info@ceig.cz via a `mailto:` link (opens the visitor's mail client).
 */
 
@@ -13,7 +13,6 @@ import { content, useLanguage } from "@/lib/i18n";
 import FadeIn from "@/components/FadeIn";
 
 const EMAIL = "info@ceig.cz";
-const WEBSITE = "www.ceig.cz";
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -38,7 +37,7 @@ export default function Contact() {
     <section id="contact" className="bg-white py-28 text-ink sm:py-40">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-14 lg:grid-cols-2">
-          {/* Left: heading + details */}
+          {/* Left: heading, intro + company details */}
           <FadeIn>
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-faint">
               {t(content.contact.label)}
@@ -50,27 +49,40 @@ export default function Contact() {
               {t(content.contact.intro)}
             </p>
 
+            {/* Company / registry details — simple label + value list */}
             <div className="mt-10 border-t border-line pt-8">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-faint">
                 {t(content.contact.infoLabel)}
               </p>
-              <ul className="mt-4 space-y-2 text-muted">
-                <li>
-                  <a href={`mailto:${EMAIL}`} className="transition-colors hover:text-ink">
-                    {EMAIL}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`https://${WEBSITE}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transition-colors hover:text-ink"
-                  >
-                    {WEBSITE}
-                  </a>
-                </li>
-              </ul>
+              <dl className="mt-5 space-y-3">
+                {content.contact.details.map((detail) => {
+                  const value = t(detail.value);
+                  const external = detail.href?.startsWith("http");
+                  return (
+                    <div
+                      key={detail.label.en}
+                      className="flex flex-col gap-0.5 sm:flex-row sm:gap-4"
+                    >
+                      <dt className="text-sm text-faint sm:w-36 sm:shrink-0">{t(detail.label)}</dt>
+                      <dd className="text-sm text-ink sm:flex-1">
+                        {detail.href ? (
+                          <a
+                            href={detail.href}
+                            {...(external
+                              ? { target: "_blank", rel: "noopener noreferrer" }
+                              : {})}
+                            className="underline-offset-4 transition-colors hover:underline"
+                          >
+                            {value}
+                          </a>
+                        ) : (
+                          value
+                        )}
+                      </dd>
+                    </div>
+                  );
+                })}
+              </dl>
             </div>
           </FadeIn>
 

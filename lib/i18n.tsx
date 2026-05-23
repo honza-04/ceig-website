@@ -153,6 +153,49 @@ export const content = {
       messagePlaceholder: { cs: "Napište nám…", en: "Write to us…" },
     },
     infoLabel: { cs: "Kontaktní údaje", en: "Contact details" },
+    details: [
+      {
+        label: { cs: "Název subjektu", en: "Legal name" },
+        value: { cs: "CEIG s.r.o.", en: "CEIG s.r.o." },
+      },
+      {
+        label: { cs: "IČO", en: "Company ID (IČO)" },
+        value: { cs: "61327832", en: "61327832" },
+      },
+      {
+        label: { cs: "Spisová značka", en: "File number" },
+        value: {
+          cs: "C 7167 vedená u Krajského soudu v Ústí nad Labem",
+          en: "C 7167, Regional Court in Ústí nad Labem",
+        },
+      },
+      {
+        label: { cs: "Den zápisu", en: "Registered" },
+        value: { cs: "16. června 1994", en: "16 June 1994" },
+      },
+      {
+        label: { cs: "Sídlo", en: "Registered office" },
+        value: {
+          cs: "Klíšská 1432/18, Ústí nad Labem-centrum, 400 01 Ústí nad Labem",
+          en: "Klíšská 1432/18, Ústí nad Labem-centrum, 400 01 Ústí nad Labem",
+        },
+      },
+      {
+        label: { cs: "Tel", en: "Phone" },
+        value: { cs: "+420 602 451 280", en: "+420 602 451 280" },
+        href: "tel:+420602451280",
+      },
+      {
+        label: { cs: "Email", en: "Email" },
+        value: { cs: "info@ceig.cz", en: "info@ceig.cz" },
+        href: "mailto:info@ceig.cz",
+      },
+      {
+        label: { cs: "Web", en: "Web" },
+        value: { cs: "www.ceig.cz", en: "www.ceig.cz" },
+        href: "https://www.ceig.cz",
+      },
+    ] as { label: Bilingual; value: Bilingual; href?: string }[],
   },
   footer: {
     rights: {
