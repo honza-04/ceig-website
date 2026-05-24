@@ -8,7 +8,7 @@ export default function Logo({ className = "" }: { className?: string }) {
         alt="CEIG — Central Europe Investment Group"
         width={610}
         height={120}
-        className="h-8 w-auto"
+        className="h-12 w-auto"
         priority
       />
     </span>
