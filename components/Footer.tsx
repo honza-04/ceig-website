@@ -24,7 +24,7 @@ export default function Footer() {
               className="h-8 w-auto"
             />
           </span>
-          <p className="mt-3 text-sm text-muted">{t(content.footer.tagline)}</p>
+
         </div>
         <p className="text-sm text-muted">{t(content.footer.rights)}</p>
       </div>

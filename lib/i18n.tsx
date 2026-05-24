@@ -204,10 +204,6 @@ export const content = {
       cs: "© 2025 CEIG s.r.o. | Central Europe Investment Group",
       en: "© 2025 CEIG s.r.o. | Central Europe Investment Group",
     },
-    tagline: {
-      cs: "Financujeme vše, co dává smysl",
-      en: "We finance everything that makes sense",
-    },
   },
 } as const;
 
