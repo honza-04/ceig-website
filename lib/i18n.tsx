@@ -110,14 +110,7 @@ export const content = {
           en: "Financing of commercial and residential real estate and development projects.",
         },
       },
-      {
-        icon: "⚡",
-        title: { cs: "Elektromobilita", en: "Electromobility" },
-        desc: {
-          cs: "Podpora přechodu na elektromobilitu a související infrastrukturu.",
-          en: "Support for the transition to electromobility and its related infrastructure.",
-        },
-      },
+
     ] as ServiceItem[],
   },
   partners: {

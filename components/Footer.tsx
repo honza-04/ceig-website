@@ -26,7 +26,17 @@ export default function Footer() {
           </span>
 
         </div>
-        <p className="text-sm text-muted">{t(content.footer.rights)}</p>
+        <div className="flex flex-col items-center gap-2 sm:items-end">
+          <a
+            href="/Elektromobilita.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-muted transition-colors hover:text-ink"
+          >
+            {t({ cs: "Elektromobilita", en: "Electromobility" })}
+          </a>
+          <p className="text-sm text-muted">{t(content.footer.rights)}</p>
+        </div>
       </div>
     </footer>
   );
