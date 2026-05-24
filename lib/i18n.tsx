@@ -60,7 +60,7 @@ export const content = {
     stats: [
       { value: "1994", label: { cs: "Rok založení", en: "Founded" } },
       { value: "30+", label: { cs: "Let zkušeností", en: "Years of experience" } },
-      { value: "6", label: { cs: "Sektorů financování", en: "Financing sectors" } },
+      { value: "5", label: { cs: "Sektorů financování", en: "Financing sectors" } },
     ] as { value: string; label: Bilingual }[],
   },
   services: {
