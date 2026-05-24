@@ -17,7 +17,7 @@ export default function Footer() {
           {/* Official CEIG logo, presented on a clean white card */}
           <span className="inline-flex rounded-lg border border-line bg-white p-3">
             <Image
-              src="/ceig-logo.avif"
+              src="/CEIG_Logo.png"
               alt="CEIG — Central Europe Investment Group"
               width={610}
               height={120}
