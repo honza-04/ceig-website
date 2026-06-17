@@ -194,8 +194,8 @@ export const content = {
   },
   footer: {
     rights: {
-      cs: "© 2025 CEIG s.r.o. | Central Europe Investment Group",
-      en: "© 2025 CEIG s.r.o. | Central Europe Investment Group",
+      cs: "© 2026 CEIG s.r.o. | Central Europe Investment Group",
+      en: "© 2026 CEIG s.r.o. | Central Europe Investment Group",
     },
   },
 } as const;
