@@ -1,7 +1,7 @@
 "use client";
 
 /*
-  Services (Naše služby) — a 2×3 card grid on white.
+  Services (Naše služby) — a responsive card grid on white.
   Each card: bilingual title and short description on a light-grey (#F5F5F5)
   surface. Cards lift gently on hover. (Text-only — no icons.)
 */

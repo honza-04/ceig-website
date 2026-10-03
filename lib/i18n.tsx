@@ -7,7 +7,14 @@
   flips the context value; every component reads its strings via `useLanguage`.
 */
 
-import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 
 export type Lang = "cs" | "en";
 
@@ -15,7 +22,6 @@ export type Lang = "cs" | "en";
 export type Bilingual = { cs: string; en: string };
 
 export type ServiceItem = {
-  icon: string;
   title: Bilingual;
   desc: Bilingual;
 };
@@ -71,7 +77,6 @@ export const content = {
     },
     items: [
       {
-        icon: "🏗",
         title: { cs: "Stavební a přepravní stroje", en: "Construction & Transport Machinery" },
         desc: {
           cs: "Financování stavebních, zemních a přepravních strojů pro firmy všech velikostí.",
@@ -79,7 +84,6 @@ export const content = {
         },
       },
       {
-        icon: "🚗",
         title: { cs: "Osobní a dodávkové vozy", en: "Passenger & Delivery Vehicles" },
         desc: {
           cs: "Pořízení osobních a užitkových vozů s flexibilními podmínkami.",
@@ -87,7 +91,6 @@ export const content = {
         },
       },
       {
-        icon: "🚛",
         title: { cs: "Nákladní vozy a autobusy", en: "Trucks & Buses" },
         desc: {
           cs: "Financování nákladních vozidel a autobusů pro dopravu a logistiku.",
@@ -95,7 +98,6 @@ export const content = {
         },
       },
       {
-        icon: "💡",
         title: { cs: "Financování technologií", en: "Technology & Machinery Financing" },
         desc: {
           cs: "Investice do výrobních technologií a strojního vybavení.",
@@ -103,14 +105,12 @@ export const content = {
         },
       },
       {
-        icon: "🏢",
         title: { cs: "Nemovitosti", en: "Real Estate & Commercial Properties" },
         desc: {
           cs: "Financování komerčních i rezidenčních nemovitostí a developerských projektů.",
           en: "Financing of commercial and residential real estate and development projects.",
         },
       },
-
     ] as ServiceItem[],
   },
   partners: {
@@ -120,12 +120,12 @@ export const content = {
       en: "Companies we trust",
     },
     items: [
-      { name: "MIP Transport", sector: { cs: "Doprava betonu", en: "Concrete transport" }, logo: "/MIP.png" },
-      { name: "Czech Media", sector: { cs: "Nemovitosti", en: "Real estate" }, logo: "/CM.png" },
-      { name: "Czech Press Group", sector: { cs: "Tisk a média", en: "Print & media" }, logo: "/CPG.png" },
-      { name: "Dislog", sector: { cs: "Logistika a skladování", en: "Logistics & warehousing" }, logo: "/dislog.png" },
-      { name: "Solidum", sector: { cs: "Monolitické konstrukce", en: "Monolithic structures" }, logo: "/solidum.png" },
-      { name: "Ronex", sector: { cs: "Balicí stroje a materiály", en: "Packaging machines & materials" }, logo: "/ronex.png" },
+      { name: "MIP Transport", sector: { cs: "Doprava betonu", en: "Concrete transport" }, logo: "/MIP.avif" },
+      { name: "Czech Media", sector: { cs: "Nemovitosti", en: "Real estate" }, logo: "/CM.avif" },
+      { name: "Czech Press Group", sector: { cs: "Tisk a média", en: "Print & media" }, logo: "/CPG.avif" },
+      { name: "Dislog", sector: { cs: "Logistika a skladování", en: "Logistics & warehousing" }, logo: "/dislog.avif" },
+      { name: "Solidum", sector: { cs: "Monolitické konstrukce", en: "Monolithic structures" }, logo: "/solidum.avif" },
+      { name: "Ronex", sector: { cs: "Balicí stroje a materiály", en: "Packaging machines & materials" }, logo: "/ronex.avif" },
     ] as PartnerItem[],
   },
   contact: {
@@ -137,15 +137,6 @@ export const content = {
     intro: {
       cs: "Ozvěte se nám. Rádi probereme možnosti financování vašeho záměru.",
       en: "Get in touch. We are happy to discuss financing options for your plans.",
-    },
-    form: {
-      name: { cs: "Jméno", en: "Name" },
-      email: { cs: "E-mail", en: "Email" },
-      message: { cs: "Zpráva", en: "Message" },
-      submit: { cs: "Odeslat zprávu", en: "Send message" },
-      namePlaceholder: { cs: "Vaše jméno", en: "Your name" },
-      emailPlaceholder: { cs: "vas@email.cz", en: "you@email.com" },
-      messagePlaceholder: { cs: "Napište nám…", en: "Write to us…" },
     },
     infoLabel: { cs: "Kontaktní údaje", en: "Contact details" },
     details: [
@@ -185,11 +176,6 @@ export const content = {
         value: { cs: "info@ceig.cz", en: "info@ceig.cz" },
         href: "mailto:info@ceig.cz",
       },
-      {
-        label: { cs: "Web", en: "Web" },
-        value: { cs: "www.ceig.cz", en: "www.ceig.cz" },
-        href: "https://www.ceig.cz",
-      },
     ] as { label: Bilingual; value: Bilingual; href?: string }[],
   },
   footer: {
@@ -214,6 +200,12 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>("cs"); // Czech is the default
+
+
+  // Keep <html lang> in sync for screen readers and search engines.
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const value = useMemo<LanguageContextValue>(
     () => ({

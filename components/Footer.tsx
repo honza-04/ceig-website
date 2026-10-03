@@ -1,7 +1,7 @@
 "use client";
 
 /*
-  Footer — logo, tagline and copyright line on the light-grey (#F5F5F5) base.
+  Footer — logo, Elektromobilita PDF link and copyright line on the light-grey (#F5F5F5) base.
 */
 
 import Image from "next/image";
@@ -17,10 +17,10 @@ export default function Footer() {
           {/* Official CEIG logo, presented on a clean white card */}
           <span className="inline-flex rounded-lg border border-line bg-white p-3">
             <Image
-              src="/CEIG_Logo.png"
+              src="/ceig-logo.png"
               alt="CEIG — Central Europe Investment Group"
-              width={610}
-              height={120}
+              width={800}
+              height={200}
               className="h-8 w-auto"
             />
           </span>

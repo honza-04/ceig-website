@@ -4,11 +4,11 @@ export default function Logo({ className = "" }: { className?: string }) {
   return (
     <span className={`inline-flex items-center ${className}`}>
       <Image
-        src="/CEIG_Logo.png"
+        src="/ceig-logo.png"
         alt="CEIG — Central Europe Investment Group"
-        width={610}
-        height={120}
-        className="h-12 w-auto"
+        width={800}
+        height={200}
+        className="h-10 w-auto"
         priority
       />
     </span>
