@@ -178,6 +178,37 @@ export const content = {
       },
     ] as { label: Bilingual; value: Bilingual; href?: string }[],
   },
+  euFunding: {
+    label: { cs: "Podpora EU", en: "EU support" },
+    heading: { cs: "Záruka Elektromobilita", en: "Electromobility Guarantee" },
+    statement: {
+      cs: "Projekt společnosti CEIG s.r.o. je financován Evropskou unií – NextGenerationEU prostřednictvím Národního plánu obnovy, v rámci programu Záruka Elektromobilita Národní rozvojové banky.",
+      en: "This CEIG s.r.o. project is funded by the European Union – NextGenerationEU through the Czech National Recovery Plan, under the Národní rozvojová banka Electromobility Guarantee programme.",
+    },
+    details: [
+      {
+        label: { cs: "Příjemce", en: "Beneficiary" },
+        value: { cs: "CEIG s.r.o.", en: "CEIG s.r.o." },
+      },
+      {
+        label: { cs: "Popis a cíle projektu", en: "Description and aims" },
+        value: {
+          cs: "Pořízení bateriového elektromobilu (BEV) Tesla Model 3 a dobíjecí stanice umístěné v sídle společnosti.",
+          en: "Purchase of a Tesla Model 3 battery electric vehicle (BEV) and a charging station at the company's registered office.",
+        },
+      },
+      {
+        label: { cs: "Výsledek realizace projektu", en: "Project outcome" },
+        value: { cs: "Projekt je úspěšně dokončen.", en: "The project has been successfully completed." },
+      },
+    ] as { label: Bilingual; value: Bilingual }[],
+    euLogoAlt: {
+      cs: "Financováno Evropskou unií – NextGenerationEU",
+      en: "Funded by the European Union – NextGenerationEU",
+    },
+    npoLogoAlt: { cs: "Národní plán obnovy", en: "National Recovery Plan" },
+    pdf: { cs: "Informační list projektu (PDF)", en: "Project information sheet (PDF, Czech)" },
+  },
   footer: {
     rights: {
       cs: "© 2026 CEIG s.r.o. | Central European Investment Group",

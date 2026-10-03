@@ -34,6 +34,7 @@ components/
   About.tsx       Split text + abstract SVG graphic, key stats
   Services.tsx    Services card grid
   Partners.tsx    Partner logo wall (grayscale → colour on hover)
+  EuFunding.tsx   Mandatory EU/NPO publicity for the Záruka Elektromobilita project
   Contact.tsx     Company details (IČO, sídlo, phone, email)
   Footer.tsx      Logo, Elektromobilita PDF link, copyright
   FadeIn.tsx      IntersectionObserver-based subtle reveal wrapper

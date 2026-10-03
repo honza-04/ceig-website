@@ -8,6 +8,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Partners from "@/components/Partners";
+import EuFunding from "@/components/EuFunding";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
         <About />
         <Services />
         <Partners />
+        <EuFunding />
         <Contact />
       </main>
       <Footer />
