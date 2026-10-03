@@ -46,7 +46,7 @@ export const content = {
       cs: "Investiční skupina od roku 1994",
       en: "An investment group since 1994",
     },
-    title: "Central Europe Investment Group",
+    title: "Central European Investment Group",
     subline: {
       cs: "Financujeme vše, co dává smysl",
       en: "We finance everything that makes sense",
@@ -60,8 +60,8 @@ export const content = {
       en: "Capital connected with opportunity",
     },
     body: {
-      cs: "Společnost CEIG (Central Europe Investment Group) působí na trhu od roku 1994 a v roce 2009 prošla rebrandingem na CEIG s.r.o. Tvoříme tým zkušených investorů a podnikatelů, kteří propojují kapitál s příležitostmi. Financujeme projekty napříč obory — od strojů a vozidel po nemovitosti a technologie — vždy s důrazem na zdravý úsudek a dlouhodobou hodnotu.",
-      en: "CEIG (Central Europe Investment Group) has been active on the market since 1994 and rebranded to CEIG s.r.o. in 2009. We are a team of experienced investors and entrepreneurs who connect capital with opportunity. We finance projects across industries — from machinery and vehicles to real estate and technology — always with an emphasis on sound judgment and long-term value.",
+      cs: "Společnost CEIG (Central European Investment Group) působí na trhu od roku 1994 a v roce 2009 prošla rebrandingem na CEIG s.r.o. Tvoříme tým zkušených investorů a podnikatelů, kteří propojují kapitál s příležitostmi. Financujeme projekty napříč obory — od strojů a vozidel po nemovitosti a technologie — vždy s důrazem na zdravý úsudek a dlouhodobou hodnotu.",
+      en: "CEIG (Central European Investment Group) has been active on the market since 1994 and rebranded to CEIG s.r.o. in 2009. We are a team of experienced investors and entrepreneurs who connect capital with opportunity. We finance projects across industries — from machinery and vehicles to real estate and technology — always with an emphasis on sound judgment and long-term value.",
     },
     stats: [
       { value: "1994", label: { cs: "Rok založení", en: "Founded" } },
@@ -180,8 +180,8 @@ export const content = {
   },
   footer: {
     rights: {
-      cs: "© 2026 CEIG s.r.o. | Central Europe Investment Group",
-      en: "© 2026 CEIG s.r.o. | Central Europe Investment Group",
+      cs: "© 2026 CEIG s.r.o. | Central European Investment Group",
+      en: "© 2026 CEIG s.r.o. | Central European Investment Group",
     },
   },
 } as const;

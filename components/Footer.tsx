@@ -18,7 +18,7 @@ export default function Footer() {
           <span className="inline-flex rounded-lg border border-line bg-white p-3">
             <Image
               src="/ceig-logo.png"
-              alt="CEIG — Central Europe Investment Group"
+              alt="CEIG — Central European Investment Group"
               width={800}
               height={200}
               className="h-8 w-auto"

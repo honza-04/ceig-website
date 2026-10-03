@@ -1,7 +1,7 @@
-# CEIG — Central Europe Investment Group
+# CEIG — Central European Investment Group
 
 Modern, bilingual (Czech / English) corporate website for **CEIG s.r.o.**
-(Central Europe Investment Group), an investment group active since 1994.
+(Central European Investment Group), an investment group active since 1994.
 
 > _Financujeme vše, co dává smysl. — We finance everything that makes sense._
 
@@ -63,4 +63,4 @@ language is mirrored to `<html lang>`.
 
 ---
 
-© 2026 CEIG s.r.o. | Central Europe Investment Group
+© 2026 CEIG s.r.o. | Central European Investment Group

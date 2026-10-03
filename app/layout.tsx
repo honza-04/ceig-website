@@ -17,18 +17,18 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ceig.cz"),
-  title: "CEIG — Central Europe Investment Group",
+  title: "CEIG — Central European Investment Group",
   description:
-    "CEIG (Central Europe Investment Group) — investiční skupina od roku 1994. Financujeme vše, co dává smysl. We finance everything that makes sense.",
+    "CEIG (Central European Investment Group) — investiční skupina od roku 1994. Financujeme vše, co dává smysl. We finance everything that makes sense.",
   keywords: [
     "CEIG",
-    "Central Europe Investment Group",
+    "Central European Investment Group",
     "investice",
     "financování",
     "investment group",
   ],
   openGraph: {
-    title: "CEIG — Central Europe Investment Group",
+    title: "CEIG — Central European Investment Group",
     description: "Financujeme vše, co dává smysl. / We finance everything that makes sense.",
     url: "https://www.ceig.cz",
     siteName: "CEIG",
