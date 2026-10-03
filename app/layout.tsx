@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { LanguageProvider } from "@/lib/i18n";
 
 // Light theme: white browser chrome on mobile.
 export const viewport: Viewport = {
@@ -19,17 +18,17 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.ceig.cz"),
   title: "CEIG — Central European Investment Group",
   description:
-    "CEIG (Central European Investment Group) — investiční skupina od roku 1994. Financujeme vše, co dává smysl. We finance everything that makes sense.",
+    "CEIG (Central European Investment Group) — investiční skupina od roku 1994. Financujeme vše, co dává smysl.",
   keywords: [
     "CEIG",
     "Central European Investment Group",
     "investice",
     "financování",
-    "investment group",
   ],
   openGraph: {
     title: "CEIG — Central European Investment Group",
-    description: "Financujeme vše, co dává smysl. / We finance everything that makes sense.",
+    description: "Financujeme vše, co dává smysl.",
+    locale: "cs_CZ",
     url: "https://www.ceig.cz",
     siteName: "CEIG",
     type: "website",
@@ -51,7 +50,7 @@ export default function RootLayout({
         </noscript>
       </head>
       <body>
-        <LanguageProvider>{children}</LanguageProvider>
+        {children}
       </body>
     </html>
   );

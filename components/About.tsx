@@ -1,31 +1,27 @@
-"use client";
-
 /*
   About (O nás) — split layout.
   Text + key stats on the left; an abstract geometric graphic (light-grey card
   with fine line work) on the right.
 */
 
-import { content, useLanguage } from "@/lib/i18n";
+import { content } from "@/lib/content";
 import FadeIn from "@/components/FadeIn";
 
 export default function About() {
-  const { t } = useLanguage();
-
   return (
-    <section id="about" className="bg-white py-28 sm:py-40">
+    <section id="about" className="bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Text column */}
           <FadeIn>
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-faint">
-              {t(content.about.label)}
+              {content.about.label}
             </p>
             <h2 className="text-3xl font-bold leading-tight text-ink sm:text-4xl">
-              {t(content.about.heading)}
+              {content.about.heading}
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted">
-              {t(content.about.body)}
+              {content.about.body}
             </p>
 
             {/* Stats */}
@@ -33,7 +29,7 @@ export default function About() {
               {content.about.stats.map((stat) => (
                 <div key={stat.value}>
                   <dt className="text-3xl font-bold text-ink sm:text-4xl">{stat.value}</dt>
-                  <dd className="mt-1 text-sm text-muted">{t(stat.label)}</dd>
+                  <dd className="mt-1 text-sm text-muted">{stat.label}</dd>
                 </div>
               ))}
             </dl>

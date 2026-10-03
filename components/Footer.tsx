@@ -1,15 +1,11 @@
-"use client";
-
 /*
   Footer — logo, Elektromobilita PDF link and copyright line on the light-grey (#F5F5F5) base.
 */
 
 import Image from "next/image";
-import { content, useLanguage } from "@/lib/i18n";
+import { content } from "@/lib/content";
 
 export default function Footer() {
-  const { t } = useLanguage();
-
   return (
     <footer className="border-t border-line bg-surface py-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 text-center sm:flex-row sm:justify-between sm:text-left">
@@ -33,9 +29,9 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="text-sm text-muted transition-colors hover:text-ink"
           >
-            {t({ cs: "Elektromobilita", en: "Electromobility" })}
+            Elektromobilita
           </a>
-          <p className="text-sm text-muted">{t(content.footer.rights)}</p>
+          <p className="text-sm text-muted">{content.footer.rights}</p>
         </div>
       </div>
     </footer>

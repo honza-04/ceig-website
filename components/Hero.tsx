@@ -1,5 +1,3 @@
-"use client";
-
 /*
   Hero — full-width white panel.
   Large black brand headline, the bilingual tagline in grey, and a black CTA
@@ -7,11 +5,9 @@
   behind the text for a restrained, airy feel.
 */
 
-import { content, useLanguage } from "@/lib/i18n";
+import { content } from "@/lib/content";
 
 export default function Hero() {
-  const { t } = useLanguage();
-
   return (
     <section
       id="top"
@@ -33,20 +29,20 @@ export default function Hero() {
       <div className="relative mx-auto w-full max-w-6xl px-6 py-32">
         <div className="max-w-3xl animate-[fade-in_0.8s_ease-out_both]">
           <p className="mb-6 text-sm font-medium uppercase tracking-[0.3em] text-faint">
-            {t(content.hero.eyebrow)}
+            {content.hero.eyebrow}
           </p>
           <h1 className="text-4xl font-bold uppercase leading-[1.08] tracking-tight text-ink sm:text-5xl md:text-6xl">
             {content.hero.title}
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted sm:text-xl">
-            {t(content.hero.subline)}
+            {content.hero.subline}
           </p>
           <div className="mt-10">
             <a
               href="#contact"
               className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white transition-all hover:opacity-80"
             >
-              {t(content.hero.cta)}
+              {content.hero.cta}
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </a>
           </div>

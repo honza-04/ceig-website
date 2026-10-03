@@ -4,14 +4,13 @@
   Sticky top navigation.
   - The CEIG logo on the left (solid black lockup).
   - Anchor links to each section.
-  - CZ / EN language toggle on the right (black active pill).
   - Always white with a thin grey (#E5E5E5) bottom border; a soft shadow fades
     in once the page is scrolled for a little depth.
   - Collapses into a hamburger menu on mobile.
 */
 
 import { useEffect, useState } from "react";
-import { content, useLanguage } from "@/lib/i18n";
+import { content } from "@/lib/content";
 import Logo from "@/components/Logo";
 
 const links = [
@@ -22,7 +21,6 @@ const links = [
 ] as const;
 
 export default function Nav() {
-  const { lang, toggle, t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -41,7 +39,7 @@ export default function Nav() {
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         {/* Logo */}
-        <a href="#top" aria-label="CEIG — home" className="flex items-center text-ink">
+        <a href="#top" aria-label="CEIG — úvod" className="flex items-center text-ink">
           <Logo />
         </a>
 
@@ -53,53 +51,28 @@ export default function Nav() {
                 href={link.href}
                 className="text-sm font-medium text-muted transition-colors hover:text-ink"
               >
-                {t(content.nav[link.key])}
+                {content.nav[link.key]}
               </a>
             </li>
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
-          {/* Language toggle */}
-          <button
-            type="button"
-            onClick={toggle}
-            className="flex items-center rounded-full border border-line text-xs font-semibold"
-            aria-label="Toggle language / Přepnout jazyk"
-          >
-            <span
-              className={`rounded-full px-3 py-1.5 transition-colors ${
-                lang === "cs" ? "bg-ink text-white" : "text-faint"
-              }`}
-            >
-              CZ
-            </span>
-            <span
-              className={`rounded-full px-3 py-1.5 transition-colors ${
-                lang === "en" ? "bg-ink text-white" : "text-faint"
-              }`}
-            >
-              EN
-            </span>
-          </button>
-
-          {/* Mobile hamburger */}
-          <button
-            type="button"
-            onClick={() => setMenuOpen((v) => !v)}
-            className="flex h-9 w-9 items-center justify-center rounded-md text-ink md:hidden"
-            aria-label="Toggle menu / Otevřít menu"
-            aria-expanded={menuOpen}
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              {menuOpen ? (
-                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-              ) : (
-                <path d="M3 6h18M3 12h18M3 18h18" strokeLinecap="round" />
-              )}
-            </svg>
-          </button>
-        </div>
+        {/* Mobile hamburger */}
+        <button
+          type="button"
+          onClick={() => setMenuOpen((v) => !v)}
+          className="flex h-9 w-9 items-center justify-center rounded-md text-ink md:hidden"
+          aria-label="Otevřít menu"
+          aria-expanded={menuOpen}
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            {menuOpen ? (
+              <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+            ) : (
+              <path d="M3 6h18M3 12h18M3 18h18" strokeLinecap="round" />
+            )}
+          </svg>
+        </button>
       </nav>
 
       {/* Mobile dropdown menu */}
@@ -113,7 +86,7 @@ export default function Nav() {
                   onClick={() => setMenuOpen(false)}
                   className="block py-3 text-sm font-medium text-muted transition-colors hover:text-ink"
                 >
-                  {t(content.nav[link.key])}
+                  {content.nav[link.key]}
                 </a>
               </li>
             ))}

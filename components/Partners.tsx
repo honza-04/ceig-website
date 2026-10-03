@@ -1,5 +1,3 @@
-"use client";
-
 /*
   Partners (Partneři) — a logo wall on white.
   Each tile holds a real partner logo on a clean white card (thin grey border),
@@ -10,21 +8,19 @@
 */
 
 import Image from "next/image";
-import { content, useLanguage } from "@/lib/i18n";
+import { content } from "@/lib/content";
 import FadeIn from "@/components/FadeIn";
 
 export default function Partners() {
-  const { t } = useLanguage();
-
   return (
-    <section id="partners" className="bg-white py-28 sm:py-40">
+    <section id="partners" className="bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <FadeIn>
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-faint">
-            {t(content.partners.label)}
+            {content.partners.label}
           </p>
           <h2 className="max-w-2xl text-3xl font-bold leading-tight text-ink sm:text-4xl">
-            {t(content.partners.heading)}
+            {content.partners.heading}
           </h2>
         </FadeIn>
 
@@ -43,7 +39,7 @@ export default function Partners() {
                   />
                 </div>
                 <span className="text-xs uppercase tracking-[0.15em] text-faint">
-                  {t(partner.sector)}
+                  {partner.sector}
                 </span>
               </div>
             </FadeIn>
